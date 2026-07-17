@@ -55,7 +55,7 @@ bads = list(epochs.info['bads'])
 epochs.interpolate_bads()
 
 # == SAVE PROCESSED EPOCHS ==
-epochs.save(os.path.join('out_dir', 'epo.fif'))
+epochs.save(os.path.join('out_dir', 'meg-epo.fif'))
 
 # == CREATE PRODUCT.JSON ==
 product_items = []
