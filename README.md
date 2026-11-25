@@ -1,5 +1,42 @@
 # Interpolate Bad Channels in Epoched MEG/EEG Data
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Interpolates the channels marked as bad in epoched MEG/EEG data with MNE-Python Epochs.interpolate_bads.**
+
+Reads MNE epochs, spatially interpolates every channel listed in info['bads'] and saves the epochs. Use it after marking bad channels to restore a full channel set before averaging or source analysis. The bads parameter is not read by the code; only channels already marked bad in the input are interpolated.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/meeg/mne/epochs` |
+| 📤 **Outputs** | `neuro/meeg/mne/epochs` |
+| 🐳 **Container** | `brainlifemeeg/mne:1.12.1` |
+| ⚙️ **Resources** | 8 CPUs · 16 GB memory · 0.17 h walltime |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.741](https://doi.org/10.25663/brainlife.app.741) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `fif01` | `neuro/meeg/mne/epochs` | yes | Epoched MEG/EEG data (meg-epo.fif) with bad channels marked in info['bads']. Channel positions are needed for spatial interpolation. |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `out_dir` | `neuro/meeg/mne/epochs` | The input epochs with bad channels interpolated (meg-epo.fif). |
+
+<details>
+<summary><b>⚙️ Parameters</b> (1)</summary>
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `bads` | string |  | Not read by the code; mark bad channels in the input data instead. |
+
+</details>
+
+<!-- brainlife-app:end -->
+
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.741-blue.svg)](https://doi.org/10.25663/brainlife.app.741)
 
 ## Description
